@@ -25,6 +25,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
+
+const taskRouter = require("./routes/task.api");
+app.use("/api/task", taskRouter);
+
+const userRouter = require("./routes/user.api");
+app.use("/api/user", userRouter);
+
 app.use((req, res, next) => {
   const err = new AppError(404, "Not Found", "Bad Request");
   next(err);
@@ -41,11 +48,5 @@ app.use((err, req, res, next) => {
     err.isOperaional ? err.errorType : "Internal Sever Error"
   );
 });
-
-const taskRouter = require("./routes/task.api");
-app.use("/api/task", taskRouter);
-
-const userRouter = require("./routes/user.api");
-app.use("/api/user", userRouter);
 
 module.exports = app;
