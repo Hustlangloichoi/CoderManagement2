@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const taskController = require("../controllers/taskController");
+const {createTask, getAllTasks, }taskController = require("../controllers/taskController"); //destruction
 
 // Middleware to check if the user is authenticated (optional, can be added later)
 

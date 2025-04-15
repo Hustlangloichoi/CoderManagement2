@@ -1,6 +1,7 @@
 const Task = require("../models/Task");
 const taskController = {};
 
+// viet thang ten func : const createTaks =
 // Tạo task mới
 taskController.createTask = async (req, res, next) => {
   try {
@@ -104,3 +105,4 @@ taskController.softDeleteTask = async (req, res, next) => {
 };
 
 module.exports = taskController;
+// module.export = {createTask, }
